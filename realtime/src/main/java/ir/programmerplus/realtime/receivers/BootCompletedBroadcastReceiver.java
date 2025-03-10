@@ -29,6 +29,7 @@ public class BootCompletedBroadcastReceiver extends BroadcastReceiver {
         if (intent != null && intent.getAction() != null && intent.getAction().matches(TextUtils.join("|", BOOT_ACTIONS))) {
 
             LogUtils.i(TAG, "RealTime: We have detected a boot complete broadcast. Action: " + intent.getAction());
+            RealTime.builder();
             RealTime.clearCachedInfo();
         }
     }
